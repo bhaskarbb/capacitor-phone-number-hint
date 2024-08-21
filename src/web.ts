@@ -6,8 +6,7 @@ export class PhoneNumberHintWeb
   extends WebPlugin
   implements PhoneNumberHintPlugin
 {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  async getPhoneNumber(): Promise<{ phoneNumber: string }> {
+    throw new Error('Method not implmented');
   }
 }
