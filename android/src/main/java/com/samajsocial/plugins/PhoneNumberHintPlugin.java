@@ -51,7 +51,7 @@ public class PhoneNumberHintPlugin extends Plugin {
 
         try {
             IntentSenderRequest intentSenderRequest = new IntentSenderRequest.Builder(credentialIntent.getIntentSender())
-                .setFlags(0, PendingIntent.FLAG_MUTABLE)
+                .setFlags(PendingIntent.FLAG_IMMUTABLE, 0)
                 .build();
 
             phoneNumberLauncher.launch(intentSenderRequest);
