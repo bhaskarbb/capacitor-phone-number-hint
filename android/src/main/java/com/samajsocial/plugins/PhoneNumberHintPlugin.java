@@ -25,7 +25,7 @@ import com.google.android.gms.auth.api.credentials.CredentialsOptions;
 @CapacitorPlugin(name = "PhoneNumberHint")
 public class PhoneNumberHintPlugin extends Plugin {
 
-   private static final String TAG = "PhoneNumberPlugin";
+    private static final String TAG = "PhoneNumberPlugin";
     private ActivityResultLauncher<IntentSenderRequest> phoneNumberLauncher;
 
     @Override
@@ -50,7 +50,10 @@ public class PhoneNumberHintPlugin extends Plugin {
         PendingIntent credentialIntent = Credentials.getClient(activity, options).getHintPickerIntent(hintRequest);
 
         try {
-            IntentSenderRequest intentSenderRequest = new IntentSenderRequest.Builder(credentialIntent.getIntentSender()).build();
+            IntentSenderRequest intentSenderRequest = new IntentSenderRequest.Builder(credentialIntent.getIntentSender())
+                .setFlags(0, PendingIntent.FLAG_MUTABLE)
+                .build();
+
             phoneNumberLauncher.launch(intentSenderRequest);
             saveCall(call);
         } catch (Exception e) {
