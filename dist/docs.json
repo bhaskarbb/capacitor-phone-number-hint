@@ -1,0 +1,25 @@
+{
+  "api": {
+    "name": "PhoneNumberHintPlugin",
+    "slug": "phonenumberhintplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "getPhoneNumber",
+        "signature": "() => Promise<{ phoneNumber: string; }>",
+        "parameters": [],
+        "returns": "Promise<{ phoneNumber: string; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "getphonenumber"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
